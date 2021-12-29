@@ -24,7 +24,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/new-year-countdown",
+            "outputPath": "docs",
+            "baseHref": "/new-year-countdown/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -76,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "new-year-countdown:build:production"
-            },
+              "browserTarget": "new-year-countdown:build:production"            },
             "development": {
-              "browserTarget": "new-year-countdown:build:development"
+              "browserTarget": "new-year-countdown:build:development",
+              "servePath": "new-year-countdown"
             }
           },
           "defaultConfiguration": "development"
