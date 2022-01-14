@@ -19,6 +19,7 @@ import { CounterService } from '@core/services';
 export class CounterPage implements OnInit {
   count?: number;
   message?: string;
+
   constructor(
     private counterService: CounterService,
     private route: ActivatedRoute
