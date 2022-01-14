@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1642193343213,
+  "timestamp": 1642194707483,
   "index": "/new-year-countdown/index.html",
   "assetGroups": [
     {
@@ -11,6 +11,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "/new-year-countdown/404.html",
         "/new-year-countdown/725.9223e3574ba61b98.js",
         "/new-year-countdown/favicon.ico",
         "/new-year-countdown/index.html",
@@ -24,8 +25,8 @@
     },
     {
       "name": "assets",
-      "installMode": "lazy",
-      "updateMode": "prefetch",
+      "installMode": "prefetch",
+      "updateMode": "lazy",
       "cacheQueryOptions": {
         "ignoreVary": true
       },
@@ -44,6 +45,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "/new-year-countdown/404.html": "755790799bd9f90555a6e736f3491cc453d446ec",
     "/new-year-countdown/725.9223e3574ba61b98.js": "264d9fdf041e88a38d7d2755b31588a99fe1841c",
     "/new-year-countdown/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/new-year-countdown/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
