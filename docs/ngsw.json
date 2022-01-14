@@ -1,0 +1,83 @@
+{
+  "configVersion": 1,
+  "timestamp": 1642193343213,
+  "index": "/new-year-countdown/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/new-year-countdown/725.9223e3574ba61b98.js",
+        "/new-year-countdown/favicon.ico",
+        "/new-year-countdown/index.html",
+        "/new-year-countdown/main.f4ba4282cf99829e.js",
+        "/new-year-countdown/manifest.webmanifest",
+        "/new-year-countdown/polyfills.deec9cc729394b4d.js",
+        "/new-year-countdown/runtime.5d9d77c74e0a98a6.js",
+        "/new-year-countdown/styles.c68f72f4e289a805.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/new-year-countdown/assets/icons/icon-128x128.png",
+        "/new-year-countdown/assets/icons/icon-144x144.png",
+        "/new-year-countdown/assets/icons/icon-152x152.png",
+        "/new-year-countdown/assets/icons/icon-192x192.png",
+        "/new-year-countdown/assets/icons/icon-384x384.png",
+        "/new-year-countdown/assets/icons/icon-512x512.png",
+        "/new-year-countdown/assets/icons/icon-72x72.png",
+        "/new-year-countdown/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/new-year-countdown/725.9223e3574ba61b98.js": "264d9fdf041e88a38d7d2755b31588a99fe1841c",
+    "/new-year-countdown/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/new-year-countdown/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/new-year-countdown/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/new-year-countdown/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/new-year-countdown/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/new-year-countdown/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/new-year-countdown/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/new-year-countdown/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/new-year-countdown/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/new-year-countdown/index.html": "4be2c52c156e9eb6e3a2ff9e312acfdf6a4f58bb",
+    "/new-year-countdown/main.f4ba4282cf99829e.js": "2f6a77df2ceb91b7cc2d5bcacb1b2721f503b542",
+    "/new-year-countdown/manifest.webmanifest": "0f015047db610562af37325c9fff96db31283e53",
+    "/new-year-countdown/polyfills.deec9cc729394b4d.js": "f7a0bf06c3311cf6746497d07c38bc435b6bbe18",
+    "/new-year-countdown/runtime.5d9d77c74e0a98a6.js": "68f7c715c43f777f44815024fb9ff28099866dad",
+    "/new-year-countdown/styles.c68f72f4e289a805.css": "b971726cbf4a0d097ff89334c9cce0a6b18373e2"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
