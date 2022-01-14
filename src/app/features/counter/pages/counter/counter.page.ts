@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CounterService } from '@core/services';
 
 @Component({
-  template: `<app-background [count]="count">
+  template: `<app-background *ngIf="count !== undefined" [count]="count">
     <app-counter-renderer
       *ngIf="count > 0"
       [count]="count"
@@ -17,8 +17,9 @@ import { CounterService } from '@core/services';
   styleUrls: ['./counter.page.css'],
 })
 export class CounterPage implements OnInit {
-  count = 0;
+  count?: number;
   message?: string;
+
   constructor(
     private counterService: CounterService,
     private route: ActivatedRoute
