@@ -1,4 +1,6 @@
 :host {
-  font-size: 20vw;
+  font-size: 15vw;
+  line-height: 20vw;
+  text-align: center;
   text-shadow: 2px 2px 4px grey;
 }

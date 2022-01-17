@@ -8,17 +8,22 @@ import {
 @Component({
   selector: 'app-counter-renderer',
   template: `<p>
-    {{ count }}
-  </p> `,
+    {{ isDisplayingTime ? timeString : count }}
+  </p>`,
   styleUrls: ['./counter-renderer.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CounterRendererComponent implements OnInit {
   private _count?: number;
+  timeString?: string;
+
+  @Input()
+  isDisplayingTime = false;
 
   @Input()
   set count(c: number) {
     this._count = c;
+    this.timeString = this.displayTime(c);
   }
 
   get count(): number {
@@ -28,4 +33,10 @@ export class CounterRendererComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  displayTime(count: number): string {
+    const days = Math.floor(count / 86400);
+    const time = new Date((count % 86400) * 1000).toISOString().slice(-13, -5);
+    return `${days > 0 ? `${days.toString()}j\n` : ''}${time}`;
+  }
 }

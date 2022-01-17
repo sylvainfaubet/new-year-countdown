@@ -7,6 +7,7 @@ import { CounterService } from '@core/services';
     <app-counter-renderer
       *ngIf="count > 0"
       [count]="count"
+      [isDisplayingTime]="isDisplayingTime"
     ></app-counter-renderer>
     <app-firework *ngIf="count <= 0"></app-firework>
     <app-message-renderer
@@ -19,6 +20,7 @@ import { CounterService } from '@core/services';
 export class CounterPage implements OnInit {
   count?: number;
   message?: string;
+  isDisplayingTime = false;
 
   constructor(
     private counterService: CounterService,
@@ -46,6 +48,8 @@ export class CounterPage implements OnInit {
       if (typeof params['message'] === 'string') {
         this.message = params['message'];
       }
+
+      this.isDisplayingTime = !!params['isDisplayingTime'];
     });
     this.counterService.countDownSubject.subscribe((count: number) => {
       this.count = count;
