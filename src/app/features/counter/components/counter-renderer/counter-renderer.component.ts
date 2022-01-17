@@ -36,7 +36,7 @@ export class CounterRendererComponent implements OnInit {
 
   displayTime(count: number): string {
     const days = Math.floor(count / 86400);
-    const time = new Date((count % 86400) * 1000).toISOString().slice(-13, -5);
-    return `${days > 0 ? `${days.toString()}j\n` : ''}${time}`;
+    const time = new Date((count % 86400) * 1000).toLocaleTimeString();
+    return `${days > 0 ? $localize`${days.toString()} jours\n` : ''}${time}`;
   }
 }

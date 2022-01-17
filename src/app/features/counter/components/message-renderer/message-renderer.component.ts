@@ -17,9 +17,8 @@ export class MessageRendererComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.message);
     if (!this.message || this.message === '') {
-      this.message = 'Bonne Année !!!';
+      this.message = $localize`Bonne Année !!!`;
     }
   }
 }
