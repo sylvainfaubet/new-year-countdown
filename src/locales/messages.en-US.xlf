@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr-FR">
+    <body>
+      <trans-unit id="258735224740271381">
+        <source><x id="PH" equiv-text="days.toString()"/> jours
+</source>
+        <target><x id="PH" equiv-text="days.toString()"/> days</target>
+      </trans-unit>
+      <trans-unit id="7432789330876248478">
+        <source>Bonne Année !!!</source>
+        <target>
+          Happy new Year !!!
+        </target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="258735224740271381" datatype="html">
+        <source><x id="PH" equiv-text="days.toString()"/> jours
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/counter/components/counter-renderer/counter-renderer.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7432789330876248478" datatype="html">
+        <source>Bonne Année !!!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/counter/components/message-renderer/message-renderer.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

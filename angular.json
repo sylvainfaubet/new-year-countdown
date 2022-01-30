@@ -8,7 +8,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "new-year-countdown": {
-      "i18n": {"sourceLocale":"fr-FR", "locales": {"en-US": "src/locale/messages.en-US.json"}},
+      "i18n": {
+        "sourceLocale":"fr",
+        "locales": {
+          "en-US": "src/locales/messages.en-US.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
