@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { CounterService } from '@core/services';
 
 @Component({
@@ -29,27 +29,38 @@ export class CounterPage implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      if (params['dev']) {
+      let parameters = params;
+      if (typeof params['q'] === 'string') {
+        parameters = (JSON.parse(atob(params['q'])) as Params) ?? params;
+      }
+
+      if (parameters['dev']) {
         let devCount = 20;
         if (
-          typeof params['dev'] === 'string' &&
-          Number.parseInt(params['dev'])
+          typeof parameters['dev'] === 'string' &&
+          Number.parseInt(parameters['dev'])
         ) {
-          devCount = Number.parseInt(params['dev']);
+          devCount = Number.parseInt(parameters['dev']);
         }
         const newDate = new Date();
         newDate.setSeconds(new Date().getSeconds() + devCount);
         this.counterService.setEndDate(newDate);
       }
-      if (typeof params['date'] === 'string') {
-        const date = new Date(params['date']);
-        this.counterService.setEndDate(date);
-      }
-      if (typeof params['message'] === 'string') {
-        this.message = params['message'];
+
+      if (typeof parameters['date'] === 'string') {
+        if (typeof parameters['time'] === 'string') {
+          const date = new Date(`${parameters['date']}T${parameters['time']}`);
+          this.counterService.setEndDate(date);
+        }
       }
 
-      this.isDisplayingTime = !!params['isDisplayingTime'];
+      if (typeof parameters['message'] === 'string') {
+        this.message = parameters['message'];
+      }
+
+      this.isDisplayingTime =
+        !!parameters['isDisplayingTime'] &&
+        parameters['isDisplayingTime'] !== 'false';
     });
     this.counterService.countDownSubject.subscribe((count: number) => {
       this.count = count;
