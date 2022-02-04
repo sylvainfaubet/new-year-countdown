@@ -10,7 +10,7 @@
   <!-- Redirect in JavaScript with meta refresh fallback above in noscript -->
   <script>
   var destination = document.documentElement.getAttribute('data-destination');
-    console.log('destination', destination, location)
+    console.log('destination', destination, location.href)
   window.location.href = destination + (window.location.search || '') + (window.location.hash || '');
   </script>
   </body>
