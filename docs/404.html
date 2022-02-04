@@ -11,7 +11,7 @@
   <script>
   var destination = document.documentElement.getAttribute('data-destination');
     console.log('destination', destination, location.pathname)
-  window.location.href = destination + (window.location.search || '') + (window.location.hash || '');
+  window.location.href = location.pathname + (window.location.search || '') + (window.location.hash || '');
   </script>
   </body>
 </html>
