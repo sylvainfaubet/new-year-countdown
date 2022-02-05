@@ -19,14 +19,17 @@ import { Config } from '../../models/config';
       formControlName="message"
       id="message"
     />
-    <input
-      type="date"
-      placeholder="Date de déclenchement"
-      i18n-placeholder
-      name="date"
-      formControlName="date"
-      id="date"
-    />
+    <div>
+      <input
+        type="date"
+        placeholder="Date de déclenchement"
+        i18n-placeholder
+        name="date"
+        formControlName="date"
+        id="date"
+      />
+      <button type="button" (click)="setDateNow()" i18n>Aujourd'hui</button>
+    </div>
     <input
       type="time"
       placeholder="Heure de déclenchement"
@@ -60,10 +63,24 @@ export class ConfigFormComponent implements OnInit {
     const now = new Date();
 
     this.form = this.fb.group({
-      message: [''],
-      date: [now.toISOString().split('T')[0]],
-      time: [now.toTimeString()],
+      message: ['Bonne Année !!!'],
+      date: [`${now.getFullYear() + 1}-01-01`],
+      time: ['00:00'],
       isDisplayingTime: [false],
+    });
+  }
+
+  setDateNow(): void {
+    const now = new Date();
+    this.form?.patchValue({
+      date: now.toISOString().split('T')[0],
+    });
+  }
+
+  setTimeNow(): void {
+    const now = new Date();
+    this.form?.patchValue({
+      time: now.toISOString().split('T')[1].split(' ')[0],
     });
   }
 

@@ -50,6 +50,7 @@ export class CounterPage implements OnInit {
       if (typeof parameters['date'] === 'string') {
         if (typeof parameters['time'] === 'string') {
           const date = new Date(`${parameters['date']}T${parameters['time']}`);
+          console.log('set Date', date);
           this.counterService.setEndDate(date);
         }
       }
