@@ -11,33 +11,49 @@ import { Config } from '../../models/config';
 @Component({
   selector: 'app-config-form',
   template: ` <form *ngIf="form" [formGroup]="form" (ngSubmit)="submit()">
-    <input
-      type="text"
-      placeholder="Message"
-      i18n-placeholder
-      message="message"
-      formControlName="message"
-      id="message"
-    />
-    <div>
+    <mat-form-field>
       <input
-        type="date"
-        placeholder="Date de déclenchement"
+        type="text"
+        matInput
+        placeholder="Message"
         i18n-placeholder
-        name="date"
-        formControlName="date"
-        id="date"
+        message="message"
+        formControlName="message"
+        id="message"
       />
-      <button type="button" (click)="setDateNow()" i18n>Aujourd'hui</button>
-    </div>
-    <input
-      type="time"
-      placeholder="Heure de déclenchement"
-      i18n-placeholder
-      formControlName="time"
-      name="time"
-      id="time"
-    />
+    </mat-form-field>
+    <fieldset>
+      <mat-form-field>
+        <input
+          type="date"
+          matInput
+          placeholder="Date de déclenchement"
+          i18n-placeholder
+          name="date"
+          formControlName="date"
+          id="date"
+        />
+      </mat-form-field>
+      <button type="button" mat-raised-button (click)="setDateNow()" i18n>
+        Aujourd'hui
+      </button>
+    </fieldset>
+    <fieldset>
+      <mat-form-field>
+        <input
+          type="time"
+          matInput
+          placeholder="Heure de déclenchement"
+          i18n-placeholder
+          formControlName="time"
+          name="time"
+          id="time"
+        />
+      </mat-form-field>
+      <button type="button" mat-raised-button (click)="setTimeNow()" i18n>
+        Maintenant
+      </button>
+    </fieldset>
     <div>
       <input
         type="checkbox"
@@ -47,7 +63,9 @@ import { Config } from '../../models/config';
       />
       <label for="isDisplayingTime" i18n>afficher l'horloge</label>
     </div>
-    <input type="submit" />
+    <button mat-raised-button color="primary" type="submit" i18n>
+      envoyer
+    </button>
   </form>`,
   styleUrls: ['./config-form.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -73,14 +91,16 @@ export class ConfigFormComponent implements OnInit {
   setDateNow(): void {
     const now = new Date();
     this.form?.patchValue({
-      date: now.toISOString().split('T')[0],
+      date: `${now.getFullYear()}-${(now.getMonth() + 1)
+        .toString()
+        .padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}`,
     });
   }
 
   setTimeNow(): void {
     const now = new Date();
     this.form?.patchValue({
-      time: now.toISOString().split('T')[1].split(' ')[0],
+      time: now.toTimeString().split(':').slice(0, 2).join(':'),
     });
   }
 
