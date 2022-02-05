@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CounterService } from '@core/services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,18 @@ import { CounterService } from '@core/services';
 export class AppComponent {
   title = 'new-year-countdown';
 
-  constructor(public counterService: CounterService) {}
+  constructor(private router: Router, public counterService: CounterService) {
+    const path = localStorage.getItem('path');
+    if (path) {
+      localStorage.removeItem('path');
+      this.router
+        .navigateByUrl(path)
+        .then(() => {
+          console.log('done');
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }
 }

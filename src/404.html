@@ -6,11 +6,12 @@
 
   <body>
     This page has moved. Redirecting...
-    
+
   <!-- Redirect in JavaScript with meta refresh fallback above in noscript -->
   <script>
-  var destination = document.documentElement.getAttribute('data-destination');
-  window.location.href = destination + (window.location.search || '') + (window.location.hash || '');
+    const path = window.location.pathname + location.search;
+    localStorage.setItem('path', path);
+    window.location.href='../';
   </script>
   </body>
 </html>
