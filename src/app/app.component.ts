@@ -13,11 +13,12 @@ export class AppComponent {
   constructor(private router: Router, public counterService: CounterService) {
     const path = localStorage.getItem('path');
     if (path) {
+      console.log('path', path);
       localStorage.removeItem('path');
       this.router
         .navigateByUrl(path)
         .then(() => {
-          console.log('done');
+          console.log('navigation done', path);
         })
         .catch((error) => {
           console.error(error);

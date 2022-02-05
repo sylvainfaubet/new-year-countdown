@@ -1,17 +1,10 @@
 <!DOCTYPE html>
-<html data-destination="/new-year-countdown">
-  <head>
-    <noscript><meta id="redirect" http-equiv="refresh" content="0; url=/new-year-countdown"></noscript>
-  </head>
-
-  <body>
-    This page has moved. Redirecting...
-
+<html>
   <!-- Redirect in JavaScript with meta refresh fallback above in noscript -->
   <script>
-    const path = window.location.pathname + location.search;
-    localStorage.setItem('path', path);
-    window.location.href='../';
+    const base = "/new-year-countdown";
+    const path = window.location.pathname.replace(base, "") + location.search;
+    localStorage.setItem("path", path);
+    window.location.href = base;
   </script>
-  </body>
 </html>
